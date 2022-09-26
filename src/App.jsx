@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     getAllSongs();
-    console.log('Hello World');
+    console.log('Songs Retrieved');
   }, []);
 
   async function getAllSongs(){
