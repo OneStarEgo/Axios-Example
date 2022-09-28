@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SongMapper from './Components/DIsplayMusic/DisplayMusic';
 
 function App() {
 
@@ -18,9 +19,12 @@ function App() {
 
   return (
     <div>
-
-      <button onClick={() => getAllSongs()}>Get All Songs</button>
-    </div>
+      <SongMapper parentEntries={songs} />
+    
+      <div>
+        <button onClick={() => getAllSongs()}>Get All Songs</button>
+      </div>
+    </div>  
   );
 }
 
