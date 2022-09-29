@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SongMapper from './Components/DIsplayMusic/DisplayMusic';
+import SearchBar from './Components/AddSongs/AddSong';
 
 function App() {
 
@@ -17,9 +18,15 @@ function App() {
     setSongs(response.data)
   }
 
+  function addNewSong(entry){
+    let tempEntries = [...songs, entry];
+    setSongs(tempEntries);
+  }
+
   return (
     <div>
       <SongMapper parentEntries={songs} />
+      <SearchBar addSongProperties={addNewSong} />
     
       <div>
         <button onClick={() => getAllSongs()}>Get All Songs</button>

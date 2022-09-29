@@ -20,7 +20,7 @@ const DisplayMusic = (props) => {
                     <td><div>{props.entry.genre}</div></td>
                 </tr>
             </tbody>
-        </table> 
+        </table>
     );
 };
 
@@ -28,10 +28,10 @@ const SongMapper = (props) => {
     return(
         <ul>
             {props.parentEntries.map((entry, index) => (
-                <li>
+                <li key="tbody">
                     <DisplayMusic index={index} entry={entry} />
                 </li>
-            ))}
+            ))};
         </ul>
     );
 };
