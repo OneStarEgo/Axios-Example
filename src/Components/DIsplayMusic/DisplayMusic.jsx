@@ -28,7 +28,7 @@ const SongMapper = (props) => {
     return(
         <ul>
             {props.parentEntries.map((entry, index) => (
-                <li key="tbody">
+                <li key={index}>
                     <DisplayMusic index={index} entry={entry} />
                 </li>
             ))};

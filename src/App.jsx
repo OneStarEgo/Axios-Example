@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SongMapper from './Components/DIsplayMusic/DisplayMusic';
-import SearchBar from './Components/AddSongs/AddSong';
+import AddSong from './Components/AddSongs/AddSong';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
 
@@ -18,16 +19,21 @@ function App() {
     setSongs(response.data)
   }
 
-  function addNewSong(entry){
-    let tempEntries = [...songs, entry];
-    setSongs(tempEntries);
-  }
+  async function postNewSong(songs){
+    const response = await axios.post('http://127.0.0.1:8000/api/music/',  songs);
+    console.log(response.data)
+    // setSongs(response.data);
+    getAllSongs()
+  };
 
   return (
     <div>
+      <SearchBar songs={songs} setSongs={setSongs}/>
       <SongMapper parentEntries={songs} />
-      <SearchBar addSongProperties={addNewSong} />
+      <AddSong addSongProperties={postNewSong} />
     
+     
+
       <div>
         <button onClick={() => getAllSongs()}>Get All Songs</button>
       </div>

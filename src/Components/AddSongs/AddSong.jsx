@@ -34,7 +34,8 @@ const AddSong = (props) => {
             <input type='text' value={release_date} onChange={(event) => setReleaseDate(event.target.value)} />
             <label>Genre</label>
             <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)} />
-            <button type='submit'>Search</button>
+            <br></br>
+            <button type='submit'>Post New Song</button>
         </form>
      );
 }
