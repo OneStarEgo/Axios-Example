@@ -3,6 +3,7 @@ import axios from 'axios';
 import SongMapper from './Components/DIsplayMusic/DisplayMusic';
 import AddSong from './Components/AddSongs/AddSong';
 import SearchBar from './Components/SearchBar/SearchBar';
+import './App.css';
 
 function App() {
 
@@ -27,12 +28,12 @@ function App() {
   };
 
   return (
-    <div>
-      <SearchBar songs={songs} setSongs={setSongs}/>
-      <SongMapper parentEntries={songs} />
-      <AddSong addSongProperties={postNewSong} />
-    
-     
+    <div className='container'>
+      <div className='search'><SearchBar songs={songs} setSongs={setSongs}/></div>
+
+      <div><SongMapper parentEntries={songs} /></div>
+
+      <div><AddSong addSongProperties={postNewSong} /></div>
 
       <div>
         <button onClick={() => getAllSongs()}>Get All Songs</button>

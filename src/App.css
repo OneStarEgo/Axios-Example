@@ -1,0 +1,19 @@
+.search {
+    background-color: blue;
+    border-radius: 3px;
+    padding: 2rem;
+};
+
+.table {
+    border-radius: 3px
+};
+
+.new-song {
+    border-radius: 3px;
+    padding: 2rem;
+};
+
+.button {
+    border-radius: 3px;
+    padding: 2rem;
+}
