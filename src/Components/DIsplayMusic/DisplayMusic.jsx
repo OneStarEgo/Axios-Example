@@ -1,7 +1,7 @@
 
 const DisplayMusic = (props) => {
     return (
-        <table className="table">
+        <table className="songContainer">
             <thead>
                 <tr>
                     <th scope="col">Title</th>

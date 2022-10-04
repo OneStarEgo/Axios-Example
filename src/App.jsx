@@ -28,17 +28,21 @@ function App() {
   };
 
   return (
-    <div className='container'>
-      <div className='search'><SearchBar songs={songs} setSongs={setSongs}/></div>
+    <div className='flex-container'>
+      <header>
+        <h1>Music Library</h1>
+        </header>
 
-      <div><SongMapper parentEntries={songs} /></div>
+      <nav>
+        <div className='searchBarContainer'><SearchBar songs={songs} setSongs={setSongs}/></div>
+        <div className='getButton'><button onClick={() => getAllSongs()}>Get All Songs</button></div>
+        <div className='addSongContainer'><AddSong addSongProperties={postNewSong}/></div>
+      </nav>
 
-      <div><AddSong addSongProperties={postNewSong} /></div>
-
-      <div>
-        <button onClick={() => getAllSongs()}>Get All Songs</button>
-      </div>
-    </div>  
+      <body>
+        <div><SongMapper parentEntries={songs} /></div>
+      </body>
+    </div>
   );
 }
 

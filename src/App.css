@@ -1,19 +1,86 @@
-.search {
-    background-color: blue;
-    border-radius: 3px;
+.flex-container {
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 2fr 8fr 3fr;
+    grid-template-areas:
+        "header header header"
+        "nav body body"
+        "footer footer footer";
+    grid-gap: .75em;
+}
+/*Header Styling*/
+header {
+    grid-area: header;
+    background-color: orange;
+}
+
+h1 {
+    text-align: center;
+}
+
+/*Nav Bar Styling*/
+nav {
+    grid-area: nav;
+    background-color: orange;
+}
+
+.searchBarContainer {
+    grid-area: nav;
+    background-color: black;
+    border-radius: 2px;
     padding: 2rem;
 };
 
-.table {
-    border-radius: 3px
+.addSongForm {
+    grid-area: nav;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+
 };
 
-.new-song {
-    border-radius: 3px;
-    padding: 2rem;
+.titleLabel {
+    grid-area: nav;
+    margin-right: 65px;
+};
+
+.artistLabel {
+    grid-area: nav;
+    margin-right: 68px;
+};
+
+.albumLabel {
+    grid-area: nav;
+    margin-right: 60px;
+};
+
+.releaseDateLabel {
+    grid-area: nav;
+    margin-right: 21px;
+};
+
+.genreLabel {
+    grid-area: nav;
+    margin-right: 66px;
 };
 
 .button {
     border-radius: 3px;
-    padding: 2rem;
+    padding: 1rem;
+}
+
+.addSongContainer {
+    grid-area: nav;
+    margin-left: 40px;
+};
+
+/*Body Styling*/
+body {
+    grid-area: body;
+}
+
+.songContainer {
+    padding: 1rem;
+    border-color: black;
 }
